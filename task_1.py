@@ -74,8 +74,7 @@ class Fourier:
         print(f"Проверка равенства Парсеваля погрешностью 0.1: {np.isclose(ordinary, transformed, atol=1e-1)}")
 
     def __draw(self):
-        plt.figure(figsize=(12, 6))
-        plt.subplot(121)
+        plt.figure(figsize=(10, 6))
         plt.plot(self.__t_list, self.__ft_list, label='f(t)')
         plt.title('Исходная функция')
         plt.xlabel('t')
@@ -83,7 +82,10 @@ class Fourier:
         plt.grid(True)
         plt.legend()
 
-        plt.subplot(122)
+        plt.show()
+
+    def __draw_transformed(self):
+        plt.figure(figsize=(10, 6))
         plt.plot(self.__transformed_list, self.__ftransformed_list, label='f(ω)')
         plt.title('Фурье-образ функции')
         plt.xlabel('ω')
@@ -99,6 +101,8 @@ class Fourier:
         self.__calculate_transformed()
         self.__check_parseval()
         self.__draw()
+        self.__draw_transformed()
+
 
 if __name__ == "__main__":
     # Function 1
@@ -112,7 +116,7 @@ if __name__ == "__main__":
     # fourier = Fourier(6, 7, 2)
 
     # Function 3
-    fourier = Fourier(2, 3, 3, 15)
+    # fourier = Fourier(2, 3, 3, 15)
     # fourier = Fourier(4, 5, 3, 25)
     # fourier = Fourier(6, 7, 3, 30)
 
@@ -124,5 +128,5 @@ if __name__ == "__main__":
     # Function 5
     # fourier = Fourier(2, 3, 5)
     # fourier = Fourier(4, 5, 5)
-    # fourier = Fourier(6, 7, 5)
+    fourier = Fourier(10, 20, 5)
     fourier.run()
