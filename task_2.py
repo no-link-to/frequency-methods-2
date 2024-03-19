@@ -15,7 +15,6 @@ class Fourier:
         self.__b = b
         self.__c = c
 
-
     def __func(self, value):
         return np.where((value >= -(self.__b + self.__c)) & (value <= (self.__b - self.__c)), self.__a, 0)
 
@@ -70,10 +69,11 @@ class Fourier:
         self.__draw_transformed()
         self.__draw_transformed_module()
 
+
 if __name__ == "__main__":
     # Function 1
-    fourier = Fourier(2, 3, -2)
+    # fourier = Fourier(2, 3, -2)
     # fourier = Fourier(2, 3, 4)
-    # fourier = Fourier(2, 3, 6)
+    fourier = Fourier(2, 3, 6)
 
     fourier.run()
